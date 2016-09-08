@@ -27,12 +27,14 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#include <cutils/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
@@ -107,6 +109,6 @@ static void import_kernel_nv(char *name, int for_emulator)
 
 void vendor_load_properties()
 {
-    import_kernel_cmdline(0, import_kernel_nv);
+    //import_kernel_cmdline(0, import_kernel_nv);
     init_alarm_boot_properties();
 }
